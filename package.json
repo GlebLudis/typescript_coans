@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GlebLudis/typescript_coans/issues"
   },
-  "homepage": "https://github.com/GlebLudis/typescript_coans#readme"
+  "homepage": "https://github.com/GlebLudis/typescript_coans#readme",
+  "devDependencies": {
+    "prettier": "^2.3.2"
+  }
 }
