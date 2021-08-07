@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/GlebLudis/typescript_coans#readme",
   "devDependencies": {
+    "eslint": "^7.32.0",
     "prettier": "^2.3.2"
   }
 }
