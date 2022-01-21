@@ -24,5 +24,8 @@ module.exports = {
     "no-plusplus": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
+    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+    "@typescript-eslint/no-namespace": "off",
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
   },
 };

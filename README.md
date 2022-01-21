@@ -2,7 +2,6 @@
     <h1 align="center"> Custom API for Task Calendar  </h1>    
 </p>
 
-
 ## Built With
 
 <ul>TypeScript</ul>
