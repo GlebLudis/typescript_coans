@@ -1,12 +1,13 @@
+<p align="center">
+    <h1 align="center"> Custom API for Task Calendar  </h1>    
+</p>
 
 
-<h1 align="center">typescript_coans</h1>
+## Built With
 
-
-<h3 align="center"><a align="center" href="https://gist.github.com/vvscode/8b60049bc335bbc52a4c363f92820956">OTUS homework <a></>
-</h3>
-
-
-
-
-- using utility types/generics
+<ul>TypeScript</ul>
+<ul>CRUD</ul>
+<ul>Filtering tasks (text/date/tags)</ul>
+<ul>localStorage</ul>
+<ul><a href="https://firebase.google.com">Firebase<a></>
+<ul>
