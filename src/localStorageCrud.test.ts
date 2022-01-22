@@ -65,7 +65,6 @@ describe("should work crud methods", () => {
 });
 
 describe("filters is work", () => {
-
   it("filter by date", async () => {
     const result = await crudCalendar.filterDate(new Date(2021, 8, 19));
 
@@ -93,7 +92,7 @@ describe("filters is work", () => {
 
   it("filter status is work", async () => {
     await crudCalendar.create(taskOne);
-    const result = (await crudCalendar.filterStatus("await"));
+    const result = await crudCalendar.filterStatus("await");
 
     expect(result).toEqual([
       JSON.parse(localStorage.getItem("Calendar") as string)[0],
