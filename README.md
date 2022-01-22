@@ -10,4 +10,5 @@ Custom API for Calendar/Task Manager using LocalStorage and Firebase for data st
 - TypeScript
 - <a href="https://firebase.google.com">Firebase<a>
 
-## [CodeSandbox]([Open Weather API](https://openweathermap.org/api))
+
+
