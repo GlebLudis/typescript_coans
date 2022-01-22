@@ -18,6 +18,7 @@ const taskTwo: Task = {
   tag: "high",
 };
 
+
 describe("should work crud methods", () => {
   it("Calendar is a class", () => {
     expect(LocalStorage.Calendar).toBeInstanceOf(Function);
@@ -61,32 +62,5 @@ describe("should work crud methods", () => {
     expect(
       JSON.parse(localStorage.getItem("Calendar") as string).length
     ).toEqual(1);
-  });
-});
-
-describe("filters is work", () => {
-  it("filter by date", async () => {
-    const result = await crudCalendar.filterDate(new Date(2021, 8, 19));
-
-    expect(result[0]).toEqual(
-      JSON.parse(localStorage.getItem("Calendar") as string)[0]
-    );
-  });
-  it("Must filter tasks by text", async () => {
-    await sleep(10);
-    const result = (await crudCalendar.filterText("Test 1"))[2];
-
-    expect(result).toEqual(
-      JSON.parse(localStorage.getItem("Calendar") as string)[0]
-    );
-  });
-
-  it("filter tag is work", async () => {
-    await crudCalendar.create(taskOne);
-    const result = await crudCalendar.filterTag("normal");
-
-    expect(result).toEqual([
-      JSON.parse(localStorage.getItem("Calendar") as string)[0],
-    ]);
   });
 });

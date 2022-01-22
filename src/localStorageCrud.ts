@@ -64,24 +64,5 @@ export namespace LocalStorage {
       newTask.id = this.uuidTask;
       return newTask;
     }
-
-    async filterDate(filtredDate: Date): Promise<Task[]> {
-      return this.storage.filter(
-        (item: Task) =>
-          JSON.stringify(item.date) === JSON.stringify(filtredDate.toString())
-      );
-    }
-
-    async filterText(text: Task["text"]): Promise<Task[]> {
-      return this.storage.filter((item: Task) => item.text === text);
-    }
-
-    async filterTag(tag: Task["tag"]): Promise<Task[]> {
-      return this.storage.filter((item: Task) => item.tag === tag);
-    }
-
-    async filterStatus(status: Task["status"]): Promise<Task[]> {
-      return this.storage.filter((item: Task) => item.status === status);
-    }
   }
 }
