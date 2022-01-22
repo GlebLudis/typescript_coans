@@ -3,6 +3,6 @@ export type Task = {
   text: string;
   status: "await" | "in progress" | "done";
   tag: "normal" | "high";
-  id?: string | undefined;
-  [key: string]: unknown;
+  id?: string | number;
+  [key: string]: any;
 };

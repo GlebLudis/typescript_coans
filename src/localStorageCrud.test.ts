@@ -5,19 +5,20 @@ const sleep = (x: number) => new Promise((resolve) => setTimeout(resolve, x));
 
 const crudCalendar = new LocalStorage.Calendar();
 
+const taskOne: Task = {
+  date: new Date(2021, 5, 15).toString(),
+  text: "test 1",
+  status: "await",
+  tag: "normal",
+};
+const taskTwo: Task = {
+  date: new Date(2021, 8, 19).toString(),
+  text: "test 2",
+  status: "in progress",
+  tag: "high",
+};
+
 describe("should work crud methods", () => {
-  const taskOne: Task = {
-    date: new Date(2021, 5, 15).toString(),
-    text: "test 1",
-    status: "await",
-    tag: "normal",
-  };
-  const taskTwo: Task = {
-    date: new Date(2021, 8, 19).toString(),
-    text: "test 2",
-    status: "in progress",
-    tag: "high",
-  };
   it("Calendar is a class", () => {
     expect(LocalStorage.Calendar).toBeInstanceOf(Function);
   });
@@ -64,8 +65,8 @@ describe("should work crud methods", () => {
 });
 
 describe("filters is work", () => {
+
   it("filter by date", async () => {
-    await sleep(10);
     const result = await crudCalendar.filterDate(new Date(2021, 8, 19));
 
     expect(result[0]).toEqual(
@@ -73,38 +74,27 @@ describe("filters is work", () => {
     );
   });
   it("Must filter tasks by text", async () => {
-    const taskThree: Task = {
-      date: new Date(2021, 8, 19).toString(),
-      text: "filter tasks by text",
-      status: "in progress",
-      tag: "high",
-    };
-    await crudCalendar.create(taskThree);
-    const result = (await crudCalendar.filterText("filter tasks by text"))[0];
+    await sleep(10);
+    const result = (await crudCalendar.filterText("Test 1"))[2];
 
     expect(result).toEqual(
-      JSON.parse(localStorage.getItem("Calendar") as string)[2]
+      JSON.parse(localStorage.getItem("Calendar") as string)[0]
     );
   });
 
   it("filter tag is work", async () => {
-    const taskFour: Task = {
-      date: new Date(2021, 8, 19).toString(),
-      text: "filter tag is work",
-      status: "in progress",
-      tag: "high",
-    };
-
-    await crudCalendar.create(taskFour);
-    const result = await crudCalendar.filterTag("high");
+    await crudCalendar.create(taskOne);
+    const result = await crudCalendar.filterTag("normal");
 
     expect(result).toEqual([
-      JSON.parse(localStorage.getItem("Calendar") as string)[3],
+      JSON.parse(localStorage.getItem("Calendar") as string)[0],
     ]);
   });
 
-  it("filter 'status' is work", async () => {
-    const result = await crudCalendar.filterStatus("in progress");
+  it("filter status is work", async () => {
+    await crudCalendar.create(taskOne);
+    const result = (await crudCalendar.filterStatus("await"));
+
     expect(result).toEqual([
       JSON.parse(localStorage.getItem("Calendar") as string)[0],
     ]);
