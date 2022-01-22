@@ -21,7 +21,7 @@
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-typescript": "^7.15.0",
-    "@firebase/database-types": "^0.9.4",
+    "@firebase/database": "^0.12.5",
     "@types/jest": "^27.4.0",
     "@types/react": "^17.0.16",
     "@types/uuid": "^8.3.4",
@@ -33,7 +33,6 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jest": "^24.4.0",
-    "firebase": "^9.6.4",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
     "lint-staged": "^11.1.2",
@@ -41,6 +40,10 @@
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5",
     "uuid": "^8.3.2"
+  },
+  "dependencies": {
+    "@firebase/database-types": "^0.9.4",
+    "firebase": "^8.10.0"
   },
   "lint-staged": {
     "*.{js,ts}": "eslint --cache --fix --ext .js,.ts",

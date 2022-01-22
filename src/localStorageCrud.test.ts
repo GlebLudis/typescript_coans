@@ -1,4 +1,5 @@
-import { LocalStorage, Task } from "./localStorageCrud"
+import {Task} from "./utils/types";
+import {LocalStorage} from "./localStorageCrud";
 
 const sleep = (x: number) => new Promise((resolve) => setTimeout(resolve, x));
 

@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
-import {Task, ICalendar} from "./utils/types";
+import {Task} from "./utils/types";
+import {ICalendar} from "./utils/interface";
 
 
 export namespace LocalStorage {
