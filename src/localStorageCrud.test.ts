@@ -18,7 +18,6 @@ const taskTwo: Task = {
   tag: "high",
 };
 
-
 describe("should work crud methods", () => {
   it("Calendar is a class", () => {
     expect(LocalStorage.Calendar).toBeInstanceOf(Function);
