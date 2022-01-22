@@ -1,12 +1,13 @@
 <p align="center">
-    <h1 align="center"> Custom API for Task Calendar  </h1>    
-</p>
+    <h1 align="center"> CRUD API  </h1> </p>
+
+![example workflow](https://github.com/GlebLudis/weather-forecast/actions/workflows/sanity-check.yml/badge.svg)
+
+Custom API for Calendar/Task Manager using LocalStorage and Firebase for data storage
 
 ## Built With
 
-<ul>TypeScript</ul>
-<ul>CRUD</ul>
-<ul>Filtering tasks (text/date/tags)</ul>
-<ul>localStorage</ul>
-<ul><a href="https://firebase.google.com">Firebase<a></>
-<ul>
+- TypeScript
+- <a href="https://firebase.google.com">Firebase<a>
+
+## [CodeSandbox]([Open Weather API](https://openweathermap.org/api))
