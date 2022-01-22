@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
-import {Task} from "./utils/types";
-import {ICalendar} from "./utils/interface";
-
+import { Task } from "./utils/types";
+import { ICalendar } from "./utils/interface";
 
 export namespace LocalStorage {
   export class Calendar implements ICalendar {
@@ -36,10 +35,7 @@ export namespace LocalStorage {
       return result[0];
     }
 
-    async update(
-      id: Task["id"],
-      updateTask: Partial<Task>
-    ): Promise<Task> {
+    async update(id: Task["id"], updateTask: Partial<Task>): Promise<Task> {
       const newTask = await this.read(id);
       for (const key in newTask) {
         if (updateTask[key]) {
@@ -47,9 +43,7 @@ export namespace LocalStorage {
         }
       }
 
-      const storage = JSON.parse(
-        localStorage.getItem("Calendar") as string
-      );
+      const storage = JSON.parse(localStorage.getItem("Calendar") as string);
       const newStorage = storage.map((item: Task) =>
         item.id === id ? newTask : item
       );

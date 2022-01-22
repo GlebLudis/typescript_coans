@@ -1,6 +1,6 @@
 import firebase from "firebase";
-import {Task} from "./utils/types";
-import {firebaseConfig} from "./utils/fireBaseConfig";
+import { Task } from "./utils/types";
+import { firebaseConfig } from "./utils/fireBaseConfig";
 
 firebase.initializeApp(firebaseConfig);
 
@@ -52,6 +52,5 @@ export namespace FireBase {
       await this.dataBase.ref(`${this.fireBasePlace}/${id}`).remove();
       this.tasksId = this.tasksId.filter((el) => el !== id);
     }
-
   }
 }

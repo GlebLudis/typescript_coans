@@ -1,6 +1,6 @@
 import firebase from "firebase";
-import {FireBase} from "./fireBaseCrud";
-import {Task} from "./utils/types";
+import { FireBase } from "./fireBaseCrud";
+import { Task } from "./utils/types";
 
 const calendar = new FireBase.Calendar("newTasks");
 
@@ -41,9 +41,7 @@ describe("firebase is work", () => {
 
   it("delete is work", async () => {
     await calendar.delete(calendar.tasksId[1] as string);
-    const locateFireBase = calendar.dataBase.ref(
-      calendar.fireBasePlace
-    );
+    const locateFireBase = calendar.dataBase.ref(calendar.fireBasePlace);
     const tasks: Task[] = Object.values(
       await (await locateFireBase.get()).val()
     );

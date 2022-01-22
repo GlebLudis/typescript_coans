@@ -1,5 +1,5 @@
-import {Task} from "./utils/types";
-import {LocalStorage} from "./localStorageCrud";
+import { Task } from "./utils/types";
+import { LocalStorage } from "./localStorageCrud";
 
 const sleep = (x: number) => new Promise((resolve) => setTimeout(resolve, x));
 
@@ -30,9 +30,7 @@ describe("should work crud methods", () => {
   it("create tasks", async () => {
     await crudCalendar.create(taskOne);
     await sleep(10);
-    expect(localStorage.getItem("Calendar")).toEqual(
-      JSON.stringify([taskOne])
-    );
+    expect(localStorage.getItem("Calendar")).toEqual(JSON.stringify([taskOne]));
     await crudCalendar.create(taskTwo);
     await sleep(10);
     expect(localStorage.getItem("Calendar")).toEqual(
@@ -58,9 +56,7 @@ describe("should work crud methods", () => {
     ).toEqual(2);
     const delTask = crudCalendar.tasks[0];
     await crudCalendar.delete(delTask);
-    expect(localStorage.getItem("Calendar")).toEqual(
-      JSON.stringify([taskTwo])
-    );
+    expect(localStorage.getItem("Calendar")).toEqual(JSON.stringify([taskTwo]));
     expect(
       JSON.parse(localStorage.getItem("Calendar") as string).length
     ).toEqual(1);
