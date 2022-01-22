@@ -1,7 +1,7 @@
 {
-  "name": "utilitytypes_generics",
-  "version": "1.0.0",
-  "description": "",
+  "name": "crud_api",
+  "version": "1.0.1",
+  "description": "CRUD for Calendar",
   "scripts": {
     "test": "jest",
     "lint": "prettier --check . && eslint . --ext .js,.ts && tsc --noEmit",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/GlebLudis/typescript_coans.git"
   },
-  "author": "",
+  "author": "Gleb Ludis",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GlebLudis/typescript_coans/issues"
