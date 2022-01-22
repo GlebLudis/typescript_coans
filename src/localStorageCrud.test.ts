@@ -89,13 +89,4 @@ describe("filters is work", () => {
       JSON.parse(localStorage.getItem("Calendar") as string)[0],
     ]);
   });
-
-  it("filter status is work", async () => {
-    await crudCalendar.create(taskOne);
-    const result = await crudCalendar.filterStatus("await");
-
-    expect(result).toEqual([
-      JSON.parse(localStorage.getItem("Calendar") as string)[0],
-    ]);
-  });
 });
