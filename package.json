@@ -39,10 +39,10 @@
     "prettier": "^2.3.2",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5",
+    "@firebase/database-types": "^0.9.4",
     "uuid": "^8.3.2"
   },
   "dependencies": {
-    "@firebase/database-types": "^0.9.4",
     "firebase": "^8.10.0"
   },
   "lint-staged": {
