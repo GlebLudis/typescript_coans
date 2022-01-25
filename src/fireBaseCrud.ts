@@ -22,7 +22,7 @@ export namespace FireBase {
     public async create(newTask: Task): Promise<Task[]> {
       const locateFireBase = this.dataBase.ref(this.fireBasePlace);
       locateFireBase.push(newTask);
-      this.tasksId = Object.keys(await (await locateFireBase.get()).val());
+      this.tasksId = Object.keys((await locateFireBase.get()).val());
       const tasks: Task[] = Object.values(
         await (await locateFireBase.get()).val()
       );

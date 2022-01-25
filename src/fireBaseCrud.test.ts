@@ -45,8 +45,7 @@ describe("firebase is work", () => {
   it("delete is work", async () => {
     await calendar.delete(calendar.tasksId[1] as string);
     const locateFireBase = calendar.dataBase.ref(calendar.fireBasePlace);
-    const tasks: Task[] = Object.values(
-      await (await locateFireBase.get()).val()
+    const tasks: Task[] = Object.values((await locateFireBase.get()).val()
     );
     expect(tasks).toEqual([taskOne]);
     expect(tasks.length).toEqual(1);
