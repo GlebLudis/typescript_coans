@@ -7,6 +7,9 @@ const calendar = new FireBase.Calendar("newTasks");
 beforeAll(async () => {
   await firebase.database().ref(calendar.fireBasePlace).remove();
 });
+afterAll(async () => {
+  await firebase.database().ref(calendar.fireBasePlace).remove();
+})
 
 describe("firebase is work", () => {
   const taskOne: Task = {
