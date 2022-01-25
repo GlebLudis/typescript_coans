@@ -25,9 +25,7 @@ describe("should work crud methods", () => {
   it("Create method is a function", () => {
     expect(crudCalendar.create).toBeInstanceOf(Function);
   });
-  it("localStorage have empty Calendar", async () => {
-    expect(localStorage.getItem("Calendar")).toEqual(JSON.stringify([]));
-  });
+
   it("create tasks", async () => {
     await crudCalendar.create(taskOne);
     await sleep(10);

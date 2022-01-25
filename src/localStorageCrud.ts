@@ -13,6 +13,7 @@ export namespace LocalStorage {
     constructor() {
       if (localStorage.getItem("Calendar") !== undefined) {
         this.storage = [];
+      } else {
         localStorage.setItem("Calendar", JSON.stringify(this.storage));
       }
       this.uuidTask = "";
