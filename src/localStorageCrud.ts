@@ -10,15 +10,6 @@ export namespace LocalStorage {
 
     uuidTask: Task["id"];
 
-    constructor() {
-      if (localStorage.getItem("Calendar") !== undefined) {
-        this.storage = [];
-      } else {
-        localStorage.setItem("Calendar", JSON.stringify(this.storage));
-      }
-      this.uuidTask = "";
-    }
-
     async create(newTask: Task): Promise<Task[]> {
       this.storage.push(await this.createTask(newTask));
       this.tasks.push(this.storage[this.storage.length - 1].id);
@@ -58,8 +49,7 @@ export namespace LocalStorage {
       Promise.resolve().then(() =>
         localStorage.setItem("Calendar", JSON.stringify(newStorage))
       );
-      const newTasks = this.tasks.filter((item: Task["id"]) => item !== id);
-      this.tasks = newTasks;
+      this.tasks = this.tasks.filter((item: Task["id"]) => item !== id);
     }
 
     async createTask(task: Task): Promise<Task> {
