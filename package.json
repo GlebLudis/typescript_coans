@@ -1,7 +1,7 @@
 {
-  "name": "utilitytypes_generics",
-  "version": "1.0.0",
-  "description": "",
+  "name": "crud_api",
+  "version": "1.0.1",
+  "description": "CRUD for Calendar",
   "scripts": {
     "test": "jest",
     "lint": "prettier --check . && eslint . --ext .js,.ts && tsc --noEmit",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/GlebLudis/typescript_coans.git"
   },
-  "author": "",
+  "author": "Gleb Ludis",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GlebLudis/typescript_coans/issues"
@@ -21,8 +21,13 @@
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-typescript": "^7.15.0",
+    "@firebase/database": "^0.12.5",
+    "@types/jest": "^27.4.0",
+    "@types/react": "^17.0.16",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
-    "@typescript-eslint/parser": "^4.29.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "babel-jest": "^27.4.6",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -34,7 +39,11 @@
     "prettier": "^2.3.2",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5",
-    "@types/react": "^17.0.16"
+    "@firebase/database-types": "^0.9.4",
+    "uuid": "^8.3.2"
+  },
+  "dependencies": {
+    "firebase": "^8.10.0"
   },
   "lint-staged": {
     "*.{js,ts}": "eslint --cache --fix --ext .js,.ts",
