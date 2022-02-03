@@ -27,6 +27,7 @@ export namespace LocalStorage {
     }
 
     async read(id: Task["id"]): Promise<Task> {
+      await null;
       const result = [];
       for (let i = 0; i < this.storage.length; i++) {
         if (this.storage[i].id === id) {
@@ -54,7 +55,9 @@ export namespace LocalStorage {
 
     async delete(id: Task["id"]): Promise<void> {
       const newStorage = this.storage.filter((item: Task) => item.id !== id);
-      localStorage.setItem("Calendar", JSON.stringify(newStorage));
+      Promise.resolve().then(() =>
+        localStorage.setItem("Calendar", JSON.stringify(newStorage))
+      );
       const newTasks = this.tasks.filter((item: Task["id"]) => item !== id);
       this.tasks = newTasks;
     }

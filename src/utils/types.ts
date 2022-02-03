@@ -4,5 +4,5 @@ export type Task = {
   status: "await" | "in progress" | "done";
   tag: "normal" | "high";
   id?: string | number;
-  [key: string]: any;
+  [key: string]: unknown;
 };
